@@ -5,6 +5,8 @@ import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.tcoded.folialib.wrapper.task.WrappedTask;
+import me.lagbug.emailer.spigot.Emailer;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
@@ -14,7 +16,7 @@ public class Actionbar {
 
 	private static String nmsver;
 	private static boolean useOldMethods = false;
-	private static final Map<Player, Integer> toSend = new HashMap<>();
+	private static final Map<Player, WrappedTask> toSend = new HashMap<>();
 
 	static {		
 		nmsver = Bukkit.getServer().getClass().getPackage().getName();
@@ -72,9 +74,9 @@ public class Actionbar {
 	}
 
 	public static void cancel(Player player) {
-		if (toSend.containsKey(player)) {
-			Bukkit.getScheduler().cancelTask(toSend.get(player));
-			toSend.remove(player);
+		WrappedTask task = toSend.remove(player);
+		if (task != null) {
+			task.cancel();
 		}
 	}
 	
@@ -83,6 +85,6 @@ public class Actionbar {
 			cancel(player);
 		}
 		
-		toSend.put(player, Bukkit.getScheduler().scheduleSyncRepeatingTask(CommonUtils.getPlugin(), () -> send(player, message), 0, 40));
+		toSend.put(player, CommonUtils.getPlugin().getScheduler().scheduleSyncRepeatingTask(() -> send(player, message), 0, 40));
     }
 }

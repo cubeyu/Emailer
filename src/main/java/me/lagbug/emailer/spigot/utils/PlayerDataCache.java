@@ -25,7 +25,7 @@ public class PlayerDataCache {
 		}
 
 		if (plugin.mysql) {
-			Bukkit.getScheduler().runTaskAsynchronously(plugin, () -> {
+			plugin.getScheduler().runTaskAsync(() -> {
 				String verifiedTable = plugin.getConfigFile().getString("storage.mysql.tables.verified");
 
 				try {
@@ -56,7 +56,7 @@ public class PlayerDataCache {
 	public static void save(boolean async) {
 		if (plugin.mysql) {
 			if (async) {
-				Bukkit.getScheduler().runTask(plugin, () -> {
+				plugin.getScheduler().runTask(() -> {
 					String verifiedTable = plugin.getConfigFile().getString("storage.mysql.tables.verified");
 
 					try {

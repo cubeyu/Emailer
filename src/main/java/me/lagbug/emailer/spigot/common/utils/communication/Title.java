@@ -4,6 +4,8 @@ import java.lang.reflect.Constructor;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.tcoded.folialib.wrapper.task.WrappedTask;
+import me.lagbug.emailer.spigot.Emailer;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
@@ -12,14 +14,14 @@ import me.lagbug.emailer.spigot.common.utils.util.CommonUtils;
 
 public class Title {
 	
-	private static final Map<Player, Integer> toSend = new HashMap<>();
+	private static final Map<Player, WrappedTask> toSend = new HashMap<>();
     
     public static void cancel(Player player) {
     	send(player, 0, "", "");
-    	
-		if (toSend.containsKey(player)) {
-			Bukkit.getScheduler().cancelTask(toSend.get(player));
-			toSend.remove(player);
+
+		WrappedTask task = toSend.remove(player);
+		if (task != null) {
+			task.cancel();
 		}
 	}
 	
@@ -27,8 +29,7 @@ public class Title {
 		if (toSend.containsKey(player)) {
 			cancel(player);
 		}
-		
-		toSend.put(player, Bukkit.getScheduler().scheduleSyncRepeatingTask(CommonUtils.getPlugin(), () -> send(player, 17, title, subtitle), 0, 40));
+		toSend.put(player, CommonUtils.getPlugin().getScheduler().scheduleSyncRepeatingTask(() -> send(player, 17, title, subtitle), 0, 40));
     }
 
     @SuppressWarnings("deprecation")

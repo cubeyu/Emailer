@@ -13,6 +13,7 @@ repositories {
     maven("https://hub.spigotmc.org/nexus/content/repositories/snapshots/")
     maven("https://oss.sonatype.org/content/groups/public/")
     maven("https://repo.extendedclip.com/content/repositories/placeholderapi/")
+    maven("https://jitpack.io")
 }
 
 dependencies {
@@ -21,6 +22,7 @@ dependencies {
 
     implementation("com.sun.mail:javax.mail:1.6.2")
     implementation("javax.activation:activation:1.1.1")
+    implementation("com.github.technicallycoded:FoliaLib:0.4.3")
 }
 
 val targetJavaVersion = 8
@@ -37,6 +39,12 @@ tasks {
         dependencies {
             include(dependency("com.sun.mail:javax.mail:1.6.2"))
             include(dependency("javax.activation:activation:1.1.1"))
+            include(dependency("com.github.technicallycoded:FoliaLib:0.4.3"))
+        }
+        mapOf(
+            "com.tcoded.folialib" to "folialib"
+        ).forEach { (original, target) ->
+            relocate(original, "me.lagbug.emailer.spigot.libs.$target")
         }
         archiveClassifier.set("")
     }

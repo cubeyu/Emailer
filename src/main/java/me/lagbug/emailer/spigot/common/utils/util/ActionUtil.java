@@ -77,7 +77,7 @@ public class ActionUtil {
 	        
 			switch (type) {
 			case "DELAY":
-				Bukkit.getScheduler().runTaskLater(CommonUtils.getPlugin(), () -> execute(player, actionsCopy), Integer.parseInt(arguments));
+				CommonUtils.getPlugin().getScheduler().runTaskLater(() -> execute(player, actionsCopy), Integer.parseInt(arguments));
 				return containsCancel;
 			case "MESSAGE":
 				if (player.isOnline()) {

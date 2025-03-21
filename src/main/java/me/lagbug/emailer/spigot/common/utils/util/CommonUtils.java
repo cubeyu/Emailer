@@ -10,15 +10,15 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Random;
 
+import me.lagbug.emailer.spigot.Emailer;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
-import org.bukkit.plugin.java.JavaPlugin;
 import org.spigotmc.SpigotConfig;
 
 public class CommonUtils {
 
 	private static final String alphabet = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	private static JavaPlugin plugin = null;
+	private static Emailer plugin = null;
 	private static boolean debug;
 
 	public static String randomString(int length) {
@@ -140,12 +140,12 @@ public class CommonUtils {
 		return plugin.getName() + " -> ";
 	}
 
-	public static void initiate(JavaPlugin pluginN, boolean debugN) {
+	public static void initiate(Emailer pluginN, boolean debugN) {
 		plugin = pluginN;
 		debug = debugN;
 	}
 
-	public static JavaPlugin getPlugin() {
+	public static Emailer getPlugin() {
 		return plugin;
 	}
 }

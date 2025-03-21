@@ -4,6 +4,7 @@ version: '${version}'
 description: Send real emails to your players.
 softdepend: [PlaceholderAPI]
 author: LagBug
+folia-supported: true
 commands:
  emailer:
   description: The main command for the emailer plugin. Contains admin commands mostly.

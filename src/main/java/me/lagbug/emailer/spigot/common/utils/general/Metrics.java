@@ -24,6 +24,7 @@ import java.util.zip.GZIPOutputStream;
 
 import javax.net.ssl.HttpsURLConnection;
 
+import me.lagbug.emailer.spigot.Emailer;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
@@ -204,7 +205,7 @@ public class Metrics {
 				// use the Bukkit scheduler
 				// Don't be afraid! The connection to the bStats server is still async, only the
 				// stats collection is sync ;)
-				Bukkit.getScheduler().runTask(plugin, () -> submitData());
+				((Emailer) plugin).getScheduler().runTask(() -> submitData());
 			}
 		}, 1000 * 60 * 5, 1000 * 60 * 30);
 		// Submit the data every 30 minutes, first time after 5 minutes to give other

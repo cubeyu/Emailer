@@ -64,7 +64,7 @@ public class Email {
 	}
 	
 	public void send() {
-		Bukkit.getScheduler().runTaskAsynchronously(plugin, () -> {
+		plugin.getScheduler().runTaskAsync(() -> {
 			try {
 				message.setFrom(fromAddress);
 				message.setRecipients(Message.RecipientType.TO, toAddress);

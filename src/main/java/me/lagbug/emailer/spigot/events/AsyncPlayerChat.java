@@ -77,7 +77,7 @@ public class AsyncPlayerChat implements Listener {
 					map.remove(player);
 				} else {
 					map.put(player, Bukkit.getOfflinePlayer(message));
-					Bukkit.getScheduler().runTask(plugin, () -> new PlayerManagerInventory().openInventory(player));
+					plugin.getScheduler().runTask(() -> new PlayerManagerInventory().openInventory(player));
 				}
 
 			}

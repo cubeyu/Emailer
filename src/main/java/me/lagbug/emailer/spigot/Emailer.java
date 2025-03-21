@@ -7,6 +7,7 @@ import javax.mail.Authenticator;
 import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
 
+import me.lagbug.emailer.spigot.utils.PluginScheduler;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.OfflinePlayer;
@@ -50,6 +51,12 @@ public class Emailer extends JavaPlugin {
 	public UpdateResult updateResult;
 	public boolean mysql;
 
+	private final PluginScheduler scheduler = new PluginScheduler(this);
+
+	public PluginScheduler getScheduler() {
+		return scheduler;
+	}
+
 	@Override
 	public void onEnable() {
 		// We register our commands
@@ -90,6 +97,8 @@ public class Emailer extends JavaPlugin {
 			}
 		}
 
+		getScheduler().onDisable();
+
 		CommonUtils.forceLog(
 				getDescription().getName() + " v" + getDescription().getVersion() + " has been disabled successfully");
 	}
@@ -116,7 +125,7 @@ public class Emailer extends JavaPlugin {
 
 		// If MySQL is enabled we try to connect asynchronously
 		if (mysql) {
-			Bukkit.getScheduler().runTaskAsynchronously(this, () -> {
+			getScheduler().runTaskAsync(() -> {
 				// We initiate a new MySQL object with the login information
 				MySQL.initiate(configFile.getString("storage.mysql.host"),
 						configFile.getString("storage.mysql.database"),
@@ -171,7 +180,7 @@ public class Emailer extends JavaPlugin {
 
 	private void registerTasks() {
 		// Register any tasks required
-		Bukkit.getScheduler().runTaskTimerAsynchronously(this, () -> PlayerDataCache.save(true), 20 * 5, 20L * 60 * getConfigFile().getInt("saveDataEvery"));
+		getScheduler().runTaskTimerAsync(() -> PlayerDataCache.save(true), 20 * 5, 20L * 60 * getConfigFile().getInt("saveDataEvery"));
 	}
 	
 	public FileConfiguration getConfigFile() {
