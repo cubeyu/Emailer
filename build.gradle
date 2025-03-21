@@ -19,6 +19,11 @@ repositories {
     mavenLocal()
 
     maven {
+        name = 'rosewood-dev'
+        url = 'https://repo.rosewooddev.io/repository/public/'
+    }
+
+    maven {
         name = 'spigotmc-repo'
         url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
     }
@@ -34,8 +39,8 @@ repositories {
 }
 
 dependencies {
-    compileOnly 'org.spigotmc:spigot:1.16.1-R0.1-SNAPSHOT'
-    compileOnly 'me.clip:placeholderapi:2.11.5'
+    compileOnly 'org.spigotmc:spigot:1.16.5'
+    compileOnly 'me.clip:placeholderapi:2.11.6'
     implementation 'com.sun.mail:javax.mail:1.6.2'
     implementation 'javax.activation:activation:1.1.1'
 }
