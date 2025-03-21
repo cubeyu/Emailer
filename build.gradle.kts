@@ -48,6 +48,9 @@ tasks {
         }
         archiveClassifier.set("")
     }
+    build {
+        dependsOn(shadowJar)
+    }
     withType<JavaCompile> {
         if (targetJavaVersion >= 10 || JavaVersion.current().isJava10Compatible) {
             options.release.set(targetJavaVersion)
