@@ -13,8 +13,8 @@
 
 languageFile: "en_US" #The language file that should be used. Use the file name without .yml from the /lang/ folder
 prefix: "&bEmailer &7>" #The prefix that is then replaced in the language file by %prefix% 
-updateChecker: true #Specifies whether or not the update checker should work. If set to false, your server will start up faster
-debug: false #If set to true, everything that is happening and is related to the plugin will be logged in the console
+updateChecker: false #Specifies whether or not the update checker should work. If set to false, your server will start up faster
+debug: true #If set to true, everything that is happening and is related to the plugin will be logged in the console
 saveDataEvery: 10 #Specifies every how many minutes the data (verified emails, pending requests etc.) should be saved
 
 storage: #Information on how user data should be saved 
