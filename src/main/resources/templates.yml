@@ -1,3 +1,43 @@
+# verificationTemplate: "verify" # 用于用户验证的邮件模板ID
+
+# emails: # 可用的邮件模板配置
+#   "verify": # 模板ID（用于游戏内识别）
+#     subject: "验证你的Minecraft账号" # 邮件主题
+#     type: HTML # 邮件类型，支持 [HTML（富文本）, TEXT（纯文本）]
+#     html: "verify.html" # 若类型为HTML，指定使用的HTML文件
+#     text: # 若类型为TEXT，邮件正文内容
+#      - "你好，%player%："
+#      - ""
+#      - "这封邮件是因你在我们的服务器上提交了验证请求而发送的。"
+#      - "非常欢迎你成为已验证邮箱用户，感谢你的配合。"
+#      - "请进入服务器并输入指令 /auth %code% 完成验证。"
+#   "update":
+#     subject: "服务器更新通知"
+#     type: HTML
+#     html: "update.html"
+#     text:
+#      - "你好，%player%："
+#      - ""
+#      - "服务器已发布更新。请访问官网（https://www.misty.pw）"
+#      - "查看完整更新日志，祝你游戏愉快！"
+#   "event":
+#     subject: "Minecraft活动邀请"
+#     type: HTML
+#     html: "event.html"
+#     text:
+#      - "你好，%player%："
+#      - ""
+#      - "我们诚挚邀请你参与Bedwars主题活动，"
+#      - "届时将有Skeppy、DanTDM等知名YouTuber共同参与！"
+#   "sale":
+#     subject: "所有等级权限限时8折优惠"
+#     type: HTML
+#     html: "coupon.html"
+#     text:
+#      - "你好，%player%："
+#      - ""
+#      - "服务器商店开启限时优惠，所有等级权限一律8折，"
+#      - "欢迎前往商店选购！"
 verificationTemplate: "verify" #The template used when verifying users
 
 emails: #The email templates to be used
