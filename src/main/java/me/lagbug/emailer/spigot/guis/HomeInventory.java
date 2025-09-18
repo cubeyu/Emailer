@@ -28,14 +28,16 @@ public class HomeInventory extends CustomInventory {
 			new TemplateInventory().openInventory(player);
 			break;
 		case "GOTO_PLAYER_MANAGER":
-			// We destroy the current GUI
-			destroy();
-			
-			player.closeInventory();
-			plugin.getLinking().put(player, player);
-			//Send the searching title to notify the player
-			Title.sendForever(player, "&bPlayer Search", "&7Enter a player name to continue");
-			break;
+				// We destroy the current GUI
+				destroy();
+				
+				player.closeInventory();
+				plugin.getLinking().put(player, player);
+				//Send the searching title to notify the player
+				Title.sendForever(player, "&bPlayer Search", "&7Enter a player name to continue");
+				// Create and open the PlayerManagerInventory
+				new PlayerManagerInventory().openInventory(player);
+				break;
 		case "RELOAD_PLUGIN":
 			// We reload the files & data
 			PlayerDataCache.save(false);
