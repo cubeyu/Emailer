@@ -63,7 +63,7 @@ public class RecipientInventory extends CustomInventory {
 			destroy();
 			player.closeInventory();
 			//Send the searching title to notify the player
-			Title.sendForever(player, "&bPlayer search", "&7Enter a player name to continue");
+			Title.sendForever(player, "&b玩家搜索", "&7请输入玩家名字");
 			return;
 		default:
 			break;

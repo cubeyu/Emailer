@@ -1,3 +1,42 @@
+# #汉化作者:cubeyu,qq:3144855127
+# general:
+#   updateAvailable: "%prefix% 检测到更新，点击此消息查看详情。"
+#   notification: "%prefix% 提醒！你有新邮件，快去查看收件箱吧。"
+
+# commands:
+#   verify:
+#     success: "%prefix% 邮箱验证成功！"
+#     already: "%prefix% 指定玩家（&b%player%&7）已完成验证。"
+#     notVerified: "%prefix% 指定玩家（&b%player%&7）尚未验证账号。"
+#     force: "%prefix% 已强制验证玩家（&b%player%&7），绑定邮箱为（&b%address%&7）。"
+#     noEmail: "%prefix% 未向你发送验证邮件，请先使用 &b/setemail &7指令绑定邮箱。"
+#   unverify:
+#     success: "%prefix% 指定玩家（&b%player%&7）已取消验证状态。"
+#   unsubscribe:
+#     success: "%prefix% 已成功取消所有邮件订阅。"
+#   pending:
+#     success: "%prefix% 验证邮件已发送至 &b%email_address%&7，请查收。"
+#     already: "%prefix% 你已收到验证邮件，请先查收处理。"
+#   search:
+#     found: "%prefix% （&b%input%&7）已验证，绑定信息为（&b%output%&7）。"
+#     notFound: "%prefix% 未找到与（&b%input%&7）匹配的玩家/邮箱。"
+#   email:
+#     sent: "%prefix% 邮件已发送给 &b%recipients% &7位接收者。若未收到，请查看控制台排查错误。"
+#   reload:
+#     success: "%prefix% 配置文件已成功重新加载。"
+
+# errors:
+#   onlyPlayers: "%prefix% 此指令仅玩家可使用。"
+#   noPermissions: "%prefix% 你没有执行此操作的权限。"
+#   playerNull: "%prefix% 指定玩家似乎不在线。"
+#   wrongUsage: "%prefix% 指令用法错误，正确用法：&b%usage%"
+#   wrongCode: "%prefix% 你输入的验证码与发送的不符，请重新核对。"
+#   wrongEmail: "%prefix% 你输入的邮箱地址无效，请检查格式。"
+#   failed: "%prefix% 邮件发送失败，发生未知错误。"
+#   templateNotFound: "%prefix% 未找到该ID对应的邮件模板。"
+#   empty: "%prefix% 目前没有已验证的用户可接收邮件。"
+#   already: "%prefix% 你的邮箱已完成验证，无需重复操作。"
+#   blocked: "%prefix% 此邮箱已被封禁。若认为有误，请联系管理员处理。"
 general:
   updateAvailable: "%prefix% An update was found, click this message."
   notification: "%prefix% Hey! You've got an email. Check your inbox."

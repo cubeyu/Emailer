@@ -31,7 +31,7 @@ public class PlayerManagerInventory extends CustomInventory {
 			destroy();
 			
 			//Send the searching title to notify the player
-			Title.sendForever(player, "&bPlayer Linking", "&7Enter an email to continue");
+			Title.sendForever(player, "&b玩家邮箱", "&7请输入玩家邮箱");
 			break;
 		case "UN_VERIFY":
 			OfflinePlayer target = plugin.getLinking().get(player);

@@ -1,3 +1,7 @@
+# title: "邮件系统 > 选择模板"
+# slots: DYNAMIC
+# refresh: 20
+# contents: {} # 内容由插件自动填充
 title: "Emailer > Templates"
 slots: DYNAMIC
 refresh: 20

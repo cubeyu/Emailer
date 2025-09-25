@@ -1,3 +1,35 @@
+# title: "邮件系统 > 玩家管理"
+# slots: 9
+# refresh: 20
+# contents:
+#   0:
+#     item: "NAME_TAG;1;0"
+#     name: "&b玩家信息"
+#     lore:
+#      - "&7该玩家的各类相关信息"
+#      - ""
+#      - "&b玩家状态："
+#      - " &7已绑定邮箱：&a%player_linked%"
+#      - " &7邮箱地址：&6%player_email%"
+#   2:
+#     item: "WOOL;1;1"
+#     name: "&f强制验证"
+#     action: "FORCE_VERIFY"
+#     lore:
+#      - "&7点击此处为该玩家"
+#      - "&7强制绑定邮箱地址。"
+#   3:
+#     item: "WOOL;1;2"
+#     name: "&f取消验证"
+#     action: "UN_VERIFY"
+#     lore:
+#      - "&7点击此处解除该玩家"
+#      - "&7与绑定邮箱的关联。"
+#   8:
+#     item: "BARRIER;1;9"
+#     name: "&f返回"
+#     lore: {}
+#     action: "GO_BACK"
 title: "Emailer > Player Manager"
 slots: 9
 refresh: 20

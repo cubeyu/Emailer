@@ -1,20 +1,60 @@
-# Thank you so much for purchasing my plugin,
-# it really means a lot to me!
-#  _____                 _ _           
-# | ____|_ __ ___   __ _(_) | ___ _ __ 
-# |  _| | '_ ` _ \ / _` | | |/ _ \ '__|
-# | |___| | | | | | (_| | | |  __/ |   
-# |_____|_| |_| |_|\__,_|_|_|\___|_|   
-#
-#
-# This is a file to help you configure settings to your likings. It is recommended
-# to leave everything as it is, but, if you know what you're doing, feel free to change
-# it. If you do not understand what something does, please leave it as it is and ask for help.
+# # 非常感谢您购买我的插件，
+# # 这对我来说意义重大！
+# #  _____                 _ _           
+# # | ____|_ __ ___   __ _(_) | ___ _ __ 
+# # |  _| | '_ ` _ \ / _` | | |/ _ \ '__|
+# # | |___| | | | | | (_| | | |  __/ |   
+# # |_____|_| | | |_|\__,_|_|_|\___|_|   
+# #
+# #
+# # 此文件用于帮助您根据喜好配置插件设置。建议
+# # 保留所有默认配置，但若您清楚各项功能用途，可随意修改。
+# # 若不理解某项配置的作用，请保持默认并寻求帮助。
+
+# languageFile: "zh_CN" # 插件使用的语言文件，填写 /lang/ 文件夹下不带 .yml 的文件名
+# prefix: "&b邮件系统 &7>" # 语言文件中 %prefix% 占位符会替换为此前缀
+# updateChecker: false # 是否启用更新检查。设为 false 可加快服务器启动速度
+# debug: false # 设为 true 时，插件相关的所有操作都会记录到控制台日志中
+# saveDataEvery: 10 # 数据（已验证邮箱、待处理请求等）的自动保存间隔（单位：分钟）
+
+# storage: # 用户数据的存储方式配置
+#   type: "FLAT" # 支持的存储类型：[MYSQL（数据库）, FLAT（本地文件）]
+#   mysql: # MySQL 存储配置（仅 type 设为 MYSQL 时生效）
+#     host: "" # 数据库主机地址
+#     database: "" # 数据库名称
+#     username: "" # 数据库用户名
+#     password: "" # 数据库密码
+#     port: 3306 # 数据库端口（默认3306）
+#     statement: "?autoReconnect=true&useUnicode=true" # 数据库连接参数
+#     tables:
+#       verified: "verified_emails" # 存储已验证邮箱的数据表名
+
+# server: # 邮件发送服务器配置，若不了解可保留默认
+#   host: "smtp.qq.com" # 发送邮件的 SMTP 服务器地址
+#   port: 587 # 发送邮件的端口，587 通常为默认端口
+
+# email: # 发送邮件的账号登录信息，此信息为隐私，切勿分享给他人
+#   address: "user@smtp.com" # 发件人邮箱，例如 "google@gmail.com"
+#   password: "" # 发件人邮箱密码。若使用 Gmail，请创建应用专用密码并填入（参考链接：https://support.google.com/accounts/answer/185833?hl=en）
+
+# security: # 通过简单配置保护服务器安全
+#   type: "BLACKLIST" # 安全验证类型，支持：["WHITELIST"（白名单，仅允许列表内地址）, "BLACKLIST"（黑名单，禁止列表内地址）]
+#   list: # 用于验证的正则表达式列表
+#     - '\b[\w\.-]+@((?!mcspam|dumbmail|).)[\w\.-]+\.\w{2,4}\b' # 禁止 mcspam、dumbmail 等域名的邮箱
+
+# onVerificationRequest: # 玩家提交邮箱验证请求时触发的操作
+#   - "TITLE;;&b邮件已发送;;&7验证邮件已发送至您的邮箱;;30" # 格式：操作类型;;主标题;;副标题;;显示时长（单位：tick，20tick=1秒）
+
+# onVerify: # 玩家成功验证邮箱时触发的操作
+#   - "TITLE;;&b验证成功;;&7您的邮箱已绑定至账号;;30"
+  
+# onUnsubscribe: # 玩家取消邮件订阅时触发的操作
+#   - "TITLE;;&b取消成功;;&7您已成功取消邮件订阅;;30"
 
 languageFile: "en_US" #The language file that should be used. Use the file name without .yml from the /lang/ folder
 prefix: "&bEmailer &7>" #The prefix that is then replaced in the language file by %prefix% 
 updateChecker: false #Specifies whether or not the update checker should work. If set to false, your server will start up faster
-debug: true #If set to true, everything that is happening and is related to the plugin will be logged in the console
+debug: false #If set to true, everything that is happening and is related to the plugin will be logged in the console
 saveDataEvery: 10 #Specifies every how many minutes the data (verified emails, pending requests etc.) should be saved
 
 storage: #Information on how user data should be saved 
