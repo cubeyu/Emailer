@@ -11,7 +11,7 @@ commands:
  setemail:
   description: Sends a verification code to the player's email.
  verifyemail:
-  aliases: [emailverify]
+  aliases: [verify]
   description: Checks the verification code sent with the one typed.
  unsubscribe:
   description: Unsubscribes a player from any emails.
