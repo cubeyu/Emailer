@@ -1,4 +1,7 @@
-<html><head></head><body><table role="presentation" border="0" width="100%" cellspacing="0" cellpadding="0">
+<html>
+<head></head>
+<body>
+<table role="presentation" border="0" width="100%" cellspacing="0" cellpadding="0">
     <tbody>
     <tr>
     <td align="center" style="padding: 20px; background-color: #f0f4f8;">
@@ -22,7 +25,7 @@
         margin: 0 0 15px 0;
         text-align: center;
         font-family: 'Microsoft YaHei', sans-serif;
-    ">Misty通知</h1>
+    ">MC更新通知</h1>
     
     <img style="
         display: block;
@@ -41,9 +44,10 @@
         text-align: center;
         font-family: 'Microsoft YaHei', sans-serif;
         padding: 0 10px;
-    ">新增多种游戏模式与插件.上线领取更新福利</p>
+    ">服务器更新啦.来领取更新福利拉!</p>
     
-    <p style="margin: 20px 0 0 0; text-align: center;">
+    <!-- 左右排列的按钮区域 -->
+    <p style="margin: 20px 0 0 0; text-align: center; white-space: nowrap;">
     <a style="
         font-size: 14px;
         font-family: 'Microsoft YaHei', sans-serif;
@@ -70,23 +74,8 @@
         display: inline-block;
         box-shadow: 0 2px 4px rgba(56, 178, 172, 0.2);
         border: none;
-        cursor: pointer;
-    " onclick="copyIp()">复制IP</button>
-    
-    <script>
-    function copyIp() {
-        // 创建临时输入框用于复制
-        const tempInput = document.createElement('input');
-        document.body.appendChild(tempInput);
-        tempInput.value = 'misty.pw';
-        tempInput.select();
-        document.execCommand('copy');
-        document.body.removeChild(tempInput);
-        
-        // 可添加复制成功提示（可选）
-        alert('IP已复制：misty.pw');
-    }
-    </script>
+        cursor: default; /* 邮件中无需点击效果，改为默认光标 */
+    ">misty.pw</button>
     </p>
     </article>
     </td>
@@ -97,4 +86,5 @@
     </tr>
     </tbody>
     </table>
-    </body></html>
+</body>
+</html>
